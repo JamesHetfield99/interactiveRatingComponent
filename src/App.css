@@ -1,38 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 54%);
+  --darkBlue: hsl(213, 19%, 18%);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+}
+body {
+  background-color: var(--veryDarkBlue);
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  height: 100dvh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  display: flex;
+  background-color: #1c232d;
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  padding: 2.1rem;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.appear {
+  animation: appear 0.5s ease-in;
+}
+
+@keyframes appear {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    padding: 1.7rem;
   }
-  to {
-    transform: rotate(360deg);
+  main {
+    padding: 2rem 1.5rem;
+    height: fit-content;
+    border-radius: 1rem;
   }
 }
